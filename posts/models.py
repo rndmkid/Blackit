@@ -14,7 +14,6 @@ def Post(models.Model):
                                     null=True,
                                     blank=True)
     isComment = models.BooleanField(default=False)
-    content = models.TextField()
     title = models.CharField(max_length=50)
 
 def Vote(models.Model):
