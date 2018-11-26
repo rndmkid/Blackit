@@ -17,18 +17,21 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include, url
 
+from django.contrib.auth.views import LoginView, LogoutView
 
+from .forms import CustomAuthenticationForm
+from . import views
 
 urlpatterns = [
-    
-    #Admin
-    path('admin/', admin.site.urls),
+    url('^login/$',
+        LoginView.as_view(template_name="login.html",
+                          authentication_form=CustomAuthenticationForm,
+                          ),
+        name='login'),
+    url('^logout/$', LogoutView.as_view(next_page="/login/")),
+    url('^new/$', views.user_new, name='user_new'),
 
-    #Home
+    #User Settings/Edit
 
-    
-    #Account
-    url('account/', include('account.urls')),
-    
-    #
+    #User Profile
 ]

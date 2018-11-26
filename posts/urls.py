@@ -18,17 +18,13 @@ from django.urls import path
 from django.conf.urls import include, url
 
 
+from . import views #from .views import PostCreate, PostUpdate,
 
 urlpatterns = [
-    
-    #Admin
-    path('admin/', admin.site.urls),
+    # New Post (/subbreddit/submit) Might add to subbreddit urls
 
-    #Home
+    # Edit Post ??
 
+    # 
     
-    #Account
-    url('account/', include('account.urls')),
-    
-    #
 ]

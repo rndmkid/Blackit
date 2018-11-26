@@ -25,3 +25,7 @@ def user_new(request, template='user_new.html'):
         form = UserForm()
 
     return render(request, template, {'form':form})
+
+#User Profile/Detail View
+
+#User Settings/Edit View
