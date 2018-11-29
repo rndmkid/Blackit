@@ -17,7 +17,14 @@ def Post(models.Model):
     title = models.CharField(max_length=50)
 
 def Vote(models.Model):
-    value = models.IntegerField()
+    UP = 1
+    DOWN = -1
+    VOTE_CHOICES = (
+        (UP, 'up'),
+        (DOWN, 'down'),
+    )
+    
+    value = models.IntegerField(choices=VOTE_CHOICES)
     owner = models.ForeignKey('accounts.User', on_delete=models.DO_NOTHING)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
 

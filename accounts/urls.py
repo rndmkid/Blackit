@@ -23,6 +23,10 @@ from .forms import CustomAuthenticationForm
 from . import views
 
 urlpatterns = [
+
+    #HomePage
+
+    #Accounts
     url('^login/$',
         LoginView.as_view(template_name="login.html",
                           authentication_form=CustomAuthenticationForm,

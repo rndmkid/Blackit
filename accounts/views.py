@@ -28,4 +28,5 @@ def user_new(request, template='user_new.html'):
 
 #User Profile/Detail View
 
+
 #User Settings/Edit View
