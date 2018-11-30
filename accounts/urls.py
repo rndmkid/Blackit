@@ -24,15 +24,12 @@ from . import views
 
 urlpatterns = [
 
-    #HomePage
-
     #Accounts
     url('^login/$',
         LoginView.as_view(template_name="login.html",
-                          authentication_form=CustomAuthenticationForm,
-                          ),
+                          authentication_form=CustomAuthenticationForm,),
         name='login'),
-    url('^logout/$', LogoutView.as_view(next_page="/login/")),
+    url('^logout/$', LogoutView.as_view(next_page="/login/"), name='logout'),
     url('^new/$', views.user_new, name='user_new'),
 
     #User Settings/Edit

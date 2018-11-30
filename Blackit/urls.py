@@ -17,18 +17,18 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include, url
 
-
+from posts import views as post_views
 
 urlpatterns = [
     
     #Admin
-    path('admin/', admin.site.urls),
+    path('^admin/', admin.site.urls),
 
     #Home
-
+    url('^$', post_views.HomePage.as_view()),
     
     #Account
-    url('account/', include('account.urls')),
+    url('^account/', include('accounts.urls')),
     
     #
 ]

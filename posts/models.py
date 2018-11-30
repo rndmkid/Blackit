@@ -5,8 +5,8 @@ from django.contrib.contenttypes.fields import GenericRelation
 
 # Create your models here.
 
-def Post(models.Model):
-    subreddit = models.ForeignKey('subreddit.Sub', on_delete=models.DO_NOTHING)
+class Post(models.Model):
+    subreddit = models.ForeignKey('subreddits.Subreddit', on_delete=models.DO_NOTHING)
     author = models.ForeignKey('accounts.User', on_delete=models.DO_NOTHING)
     votes = models.IntegerField(default=0)
     response_to = models.ForeignKey('posts.Post',
@@ -14,9 +14,9 @@ def Post(models.Model):
                                     null=True,
                                     blank=True)
     isComment = models.BooleanField(default=False)
-    title = models.CharField(max_length=50)
+    title = models.TextField()
 
-def Vote(models.Model):
+class Vote(models.Model):
     UP = 1
     DOWN = -1
     VOTE_CHOICES = (

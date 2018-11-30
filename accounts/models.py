@@ -1,7 +1,7 @@
 from django.db import models
-from django.contrib.auth import auth
+from django.contrib.auth import models as auth
 # Create your models here.
 
-def User(auth.User):
+class User(auth.User):
     pass
 
